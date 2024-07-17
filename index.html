@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Selector</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Team Selector</h1>
+    <div id="password-section">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" name="password">
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div id="team-section" class="hidden">
+        <label for="team">Select Team:</label>
+        <select id="team">
+            <option value="team1">Team 1</option>
+            <option value="team2">Team 2</option>
+            <option value="team3">Team 3</option>
+            <option value="team4">Team 4</option>
+        </select>
+        <button onclick="showContent()">Show Content</button>
+    </div>
+
+    <div id="content-section" class="hidden">
+        <h2 id="team-name"></h2>
+        <img id="team-image" src="" alt="Team Image 1">
+        <img id="team-image2" src="" alt="Team Image 2">
+        <p id="team-description"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'BC') { // Replace with your desired password
+                document.getElementById('password-section').classList.add('hidden');
+                document.getElementById('team-section').classList.remove('hidden');
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+
+        function showContent() {
+            const team = document.getElementById('team').value;
+            const teamName = document.getElementById('team-name');
+            const teamImage = document.getElementById('team-image');
+            const teamImage2 = document.getElementById('team-image2');
+            const teamDescription = document.getElementById('team-description');
+
+            if (team === 'team1') {
+                teamName.textContent = 'Team 1';
+                teamDescription.textContent = 'Description for Team 1';
+                teamImage.src = 'https://github.com/daconme96/Brain2.html/blob/main/SPQA.jpg?raw=true'; // Replace with the path to your image
+                teamImage2.src = 'https://github.com/daconme96/Brain2.html/blob/main/SPQA2.jpg?raw=true'; // Replace with the path to your image
+                
+                
+            } else if (team === 'team2') {
+                teamName.textContent = 'Team 2';
+                 teamDescription.textContent = 'Description for Team 2';
+                teamImage.src = 'https://github.com/daconme96/Brain2.html/blob/main/VITRAL.jpg?raw=true'; // Replace with the path to your image
+               
+            } else if (team === 'team3') {
+                teamName.textContent = 'Team 3';
+                 teamDescription.textContent = 'Description for Team 3';
+                teamImage.src = 'https://github.com/daconme96/Brain2.html/blob/main/Electrolyzer.jpg?raw=true'; // Replace with the path to your image
+               
+            
+             } else if (team === 'team4') {
+                teamName.textContent = 'Team 4';
+                   teamDescription.textContent = 'Description for Team 4';
+               teamImage.src = 'https://github.com/daconme96/Brain2.html/blob/main/SPQA.jpg?raw=true'; // Replace with the path to your image
+                teamImage2.src = 'https://github.com/daconme96/Brain2.html/blob/main/SPQA2.jpg?raw=true'; // Replace with the path to your ima
+             
+            }
+
+            document.getElementById('team-section').classList.add('hidden');
+            document.getElementById('content-section').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
